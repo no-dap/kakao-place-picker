@@ -1,14 +1,26 @@
 {
   "name": "kakao-place-picker",
   "version": "0.0.1",
-  "author": "no-dap",
-  "homepage": "https://github.com/no-dap",
+  "author": {
+    "name": "no-dap",
+    "email": "somniholic@naver.com",
+    "url": "https://github.com/no-dap"
+  },
   "private": false,
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --mode development"
+  },
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
   }
 }
