@@ -1,0 +1,14 @@
+{
+  "name": "kakao-place-picker",
+  "version": "0.0.1",
+  "author": "no-dap",
+  "homepage": "https://github.com/no-dap",
+  "private": false,
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "tslint": "~5.15.0",
+    "typescript": "~3.8.3"
+  }
+}
