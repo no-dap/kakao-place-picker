@@ -6,17 +6,23 @@
     "email": "somniholic@naver.com",
     "url": "https://github.com/no-dap"
   },
+  "repository": "https://github.com/no-dap/kakao-place-picker",
+  "description": "place picker can be implemented as iframe, based on kakao map api",
+  "license": "MIT License",
   "private": false,
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --mode development"
   },
   "dependencies": {
+    "ts-node": "^8.10.2",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
     "css-loader": "^3.2.0",
+    "less-loader": "^6.2.0",
     "style-loader": "^1.0.0",
+    "ts-loader": "^8.0.1",
     "tslint": "~5.15.0",
     "typescript": "~3.8.3",
     "webpack": "^4.41.0",

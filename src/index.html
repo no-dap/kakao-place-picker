@@ -4,10 +4,53 @@
     <meta charset="UTF-8">
     <title>kakao-place-picker</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=TODO&libraries=services,drawing"></script>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <script src="../dist/KakaoPlacePicker.min.js"></script>
+    <require from="global.less"></require>
+    <script>
+        const kakaoPlacePicker = new KakaoPlacePicker.default;
+        kakaoPlacePicker.init('7d714a98f3c731f31ee7f6788986595c',
+            'kakao-place-picker-map-container',
+            {longitude: 126.9783882, latitude: 37.5666103});
+    </script>
 </head>
 <body>
+<div class="place-picker-wrapper">
+    <div class="header">
+        <div class="search">
+            <img class="search-icon" alt="" src="assets/images/icon_back.png">
+            <input class="search-input" placeholder="장소를 입력해주세요.">
+            <img class="search-btn" alt="" src="assets/images/icon_search_grey.png">
+        </div>
+    </div>
 
+    <div id="kakao-place-picker-map-container" class="map"></div>
+
+    <div class="bottom">
+        <div class="place-list">
+            <div class="place-item" *ngFor="let p of placeList; let i = index" (click)="select_place(p, i)">
+                <div class="title" id="itemPlaceName">{{p.place_name}}</div>
+                <div class="content" id="itemRoadAddressName">{{p.road_address_name}}</div>
+                <div class="content" id="itemCategoryName">{{p.category_name}}</div>
+                <div class="content" id="itemPhone">{{p.phone}}</div>
+            </div>
+        </div>
+        <div class="place-info">
+            <div class="place-info-header">
+                <span class="title" id="infoPlaceName"></span>
+                <img class="close-icon" alt="" src="assets/images/icon_close_black.png">
+            </div>
+            <div class="place-info-body">
+                <div class="content" id="infoCategoryName"></div>
+                <div class="content" id="infoRoadAddressName"></div>
+                <div class="content" id="infoPhone"></div>
+            </div>
+            <div class="place-info-footer">
+                <div class="select">장소 지정</div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

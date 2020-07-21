@@ -11,10 +11,18 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                test: /\.less$/i,
+                use: ['style-loader', 'css-loader', 'less-loader', ],
             },
+            {
+                test: /\.ts$/i,
+                use: ['ts-loader', ]
+            }
         ]
+    },
+    resolve: {
+        modules: ['node_modules'],
+        extensions: ['.js', '.ts', ]
     },
     devServer: {
         stats: "errors-only",
