@@ -1,3 +1,4 @@
+import { EventListener } from './app/event-listener';
 import { kakaoLatLngOptions, LatLng } from './app/interface';
 import { ScriptCache } from './app/script-cache';
 import './global.less';
@@ -8,10 +9,11 @@ export default class KaKaoPlacePicker {
   // map container
   private container: HTMLElement;
   public map: any;
+  private eventListener: EventListener;
 
   constructor() {
-
   }
+
 
   public init(appKey: string, containerId: string, latLng: LatLng): void {
     this.setKakaoScript(appKey, containerId, latLng);
@@ -33,6 +35,7 @@ export default class KaKaoPlacePicker {
         level: 3
       };
       this.map = new kakao.maps.Map(this.container, options);
+      this.eventListener = new EventListener(this.map);
     });
   };
 }
