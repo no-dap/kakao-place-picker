@@ -4,11 +4,11 @@ const isObject = (value: any): boolean => {
   const type = typeof value;
 
   return !!value && (type === 'object');
-}
+};
 
 
 /**
- * JSON 형식의 데이터를 snake_case -> camelCase 로 전환해주는 어댑터입니다.
+ * JSON 형식의 data 를 snake_case -> camelCase 로 전환 해주는 adaptor 입니다.
  */
 export class ResponseAdaptor {
   private transform<T, V>(targetObject: T | any | object): V | any {

@@ -1,5 +1,3 @@
-import { LatLng } from './interface';
-
 export class ScriptCache {
   private loaded: string[];
   private readonly failed: string[];
@@ -13,7 +11,7 @@ export class ScriptCache {
 
   public load(scripts: string[], callback: (...args) => void, ...args): void {
     for (const src of scripts) {
-      this.loadSrc(src).then((resolve) => {
+      this.loadSrc(src).then(() => {
         callback(...args);
       });
     }
@@ -35,7 +33,8 @@ export class ScriptCache {
       .catch((err) => {
         this.failed.push(this.pending.pop());
         console.error('Loading script failed: ', this.failed);
-      })
+        console.error('Error: ', err);
+      });
   }
 
   /**

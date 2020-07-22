@@ -87,13 +87,13 @@ export class Renderer {
 
   private onClickConfirm(): void {
     this.location.insertRegion((data: Place) => {
-      window.top.postMessage({type: 'placeSelected', data}, '*')
+      window.top.postMessage({ type: 'placeSelected', data }, '*');
     });
   }
 
   private static addPlaceItemContent(innerHTML: string, content: string): string {
     if (content !== "") {
-      innerHTML += `<div class="content">${content}</div>`
+      innerHTML += `<div class="content">${content}</div>`;
     }
     return innerHTML;
   }
@@ -101,7 +101,7 @@ export class Renderer {
   private renderPlaceItem(place: Place, idx: number): HTMLElement {
     const placeItemElement: HTMLElement = document.createElement('div');
     placeItemElement.classList.add('place-item');
-    let innerHTML: string = `<div class="title">${place.placeName}</div>`
+    let innerHTML: string = `<div class="title">${place.placeName}</div>`;
     innerHTML = Renderer.addPlaceItemContent(innerHTML, place.roadAddressName);
     innerHTML = Renderer.addPlaceItemContent(innerHTML, place.categoryName);
     innerHTML = Renderer.addPlaceItemContent(innerHTML, place.phone);

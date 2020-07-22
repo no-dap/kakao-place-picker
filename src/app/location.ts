@@ -1,4 +1,4 @@
-import { Observable, Subject, Subscription } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ResponseAdaptor } from './adaptor';
 import { EventListener } from './event-listener';
 import { Place } from './interface';
@@ -116,7 +116,7 @@ export class Location {
    * marker 를 추가 합니다.
    */
   private searchLocation(): void {
-    const $inputChanged: Subscription = this.eventListener.getSearchInputChanged().subscribe((input: string) => {
+    this.eventListener.getSearchInputChanged().subscribe((input: string) => {
       const placeService = new kakao.maps.services.Places();
       this.flushLocation();
 
@@ -144,7 +144,7 @@ export class Location {
     });
   }
 
-  public insertRegion(callback){
+  public insertRegion(callback) {
     const geoCoder = new kakao.maps.services.Geocoder();
 
     geoCoder.coord2RegionCode(this.place.lng, this.place.lat, (res, status) => {
