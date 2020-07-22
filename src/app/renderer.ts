@@ -72,7 +72,7 @@ export class Renderer {
     (this.placeInfoElement.querySelector('#infoPhone') as HTMLDivElement).innerText = place.phone;
   }
 
-  private onClickPlaceItem(place: Place, idx: number): void {
+  public onClickPlaceItem(place: Place, idx: number): void {
     this.togglePlaceInfo(true);
     this.togglePlaceList(false);
     this.location.setPlace(place, idx);

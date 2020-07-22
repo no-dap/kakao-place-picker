@@ -46,8 +46,8 @@ export class Location {
    * icon 을 가져와 MarkerImage object  생성 합니다.
    */
   private setIcon(): void {
-    this.iconOn = new kakao.maps.MarkerImage('../assets/icon/marker_on.png', new kakao.maps.Size(30, 42));
-    this.iconOff = new kakao.maps.MarkerImage('../assets/icon/marker_off.png', new kakao.maps.Size(30, 42));
+    this.iconOn = new kakao.maps.MarkerImage('dist/img/marker_on.png', new kakao.maps.Size(30, 42));
+    this.iconOff = new kakao.maps.MarkerImage('dist/img/marker_off.png', new kakao.maps.Size(30, 42));
   }
 
   public getPlaceListObservable(): Observable<Place[]> {
@@ -88,7 +88,7 @@ export class Location {
   /**
    * 지도에 marker 를 추가 합니다.
    */
-  private addMaker(place: Place): void {
+  private addMarker(place: Place): void {
     const marker = new kakao.maps.Marker({
       clickable: true,
       map: this.map,
@@ -103,10 +103,7 @@ export class Location {
       if (this.activeMarker) {
         this.activeMarker.setImage(this.iconOff);
       }
-
-      this.place = place;
-      marker.setImage(this.iconOn);
-      this.activeMarker = marker;
+      this.renderer.onClickPlaceItem(place, this.markerList.indexOf(marker));
     });
   }
 
@@ -131,7 +128,7 @@ export class Location {
           for (const data of res) {
             data.lat = data.y;
             data.lng = data.x;
-            this.addMaker(data);
+            this.addMarker(data);
             bounds.extend(new kakao.maps.LatLng(data.lat, data.lng));
           }
           // publish this.placeList for renderer (render bottom place picker)
