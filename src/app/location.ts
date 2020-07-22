@@ -1,3 +1,6 @@
+import '../assets/icon/marker_on.png';
+import '../assets/icon/marker_off.png';
+
 import { Observable, Subject } from 'rxjs';
 import { ResponseAdaptor } from './adaptor';
 import { EventListener } from './event-listener';
@@ -43,12 +46,8 @@ export class Location {
    * icon 을 가져와 MarkerImage object  생성 합니다.
    */
   private setIcon(): void {
-    this.iconOn = new kakao.maps.MarkerImage(
-      '/kakao-place-picker/src/assets/icon/marker_on.png',
-      new kakao.maps.Size(30, 42));
-    this.iconOff = new kakao.maps.MarkerImage(
-      '/kakao-place-picker/src/assets/icon/marker_off.png',
-      new kakao.maps.Size(30, 42));
+    this.iconOn = new kakao.maps.MarkerImage('../assets/icon/marker_on.png', new kakao.maps.Size(30, 42));
+    this.iconOff = new kakao.maps.MarkerImage('../assets/icon/marker_off.png', new kakao.maps.Size(30, 42));
   }
 
   public getPlaceListObservable(): Observable<Place[]> {

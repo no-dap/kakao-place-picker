@@ -1,3 +1,6 @@
+import './assets/images/icon_back.png';
+import './assets/images/icon_close_black.png';
+import './assets/images/icon_search_grey.png';
 import { EventListener } from './app/event-listener';
 import { kakaoLatLngOptions, LatLng } from './app/interface';
 import { ScriptCache } from './app/script-cache';
