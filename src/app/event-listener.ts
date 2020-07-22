@@ -45,7 +45,7 @@ export class EventListener {
    */
   onClickBackButton(): void {
     this.backBtn.addEventListener('click', () => {
-      window.top.postMessage({event: 'backButtonClicked'}, '*');
+      window.top.postMessage({type: 'backButtonClicked'}, '*');
     });
   }
 
