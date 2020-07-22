@@ -73,7 +73,10 @@ npm run-script build
           {longitude: 'initial longitude', latitude: 'initial latitude'});
   </script>
   ```
-  
+## Customize
+- If you want to change marker image : replace image in /src/assets/icon/ && re-build
+- ???
+
 ## Result
 Works on both PC, mobile (not tested in tablet PC)  
 <img width="399" alt="Screen Shot 2020-07-22 at 5 55 45 PM" src="https://user-images.githubusercontent.com/26595506/88156631-a49fcd00-cc44-11ea-95a4-73cebd7ea683.png">
