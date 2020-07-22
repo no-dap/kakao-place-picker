@@ -15,8 +15,8 @@ npm run-script build
 ```
 
 ## How to use
-1. Serve this project at static storage
-2. In parent project,
+#### Serve this project at static storage
+#### In parent project,
 - in html template
   ```html
   <iframe id="kakao-place-picker" src="YOUR_STATIC_STORAGE_URL"></iframe>
@@ -62,4 +62,14 @@ npm run-script build
     region_depth4?: string;
   }
   ```
-  
+#### in current project,
+- in template (See : index.html)
+  ```html
+  <script src="dist/KakaoPlacePicker.min.js"></script>
+  <script>
+      const kakaoPlacePicker = new KakaoPlacePicker.default;
+      kakaoPlacePicker.init('Your app key',
+          'kakao-place-picker-map-container',
+          {longitude: 'initial longitude', latitude: 'initial latitude'});
+  </script>
+  ```
