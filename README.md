@@ -23,25 +23,25 @@ npm run-script build
   ```
 - in JS (or TS)
   ```typescript
-  window.onmessage = (event: kakaoPlacePickerEvent) => {
+  window.onmessage = (event: KakaoPlacePickerEvent) => {
     switch (event.type) {
       case 'backButtonClicked':
         // Do something on back button clicked
         break;
       case 'placeSelected':
-        const data: placeData = event.data;
+        const data: PlaceData = event.data;
         // Do something on place selected
         break;
     }
   }
   
   // return data interface
-  interface kakaoPlacePickerEvent {
+  interface KakaoPlacePickerEvent {
     type: string;
-    data: placeData;
+    data: PlaceData;
   }
   
-  interface placeData {
+  interface PlaceData {
     addressName: string;
     categoryGroupCode: string;
     categoryGroupName: string;
