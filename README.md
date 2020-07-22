@@ -62,7 +62,7 @@ npm run-script build
     region_depth4?: string;
   }
   ```
-#### in current project,
+#### In current project,
 - in template (See : index.html)
   ```html
   <script src="dist/KakaoPlacePicker.min.js"></script>
