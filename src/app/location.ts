@@ -125,8 +125,6 @@ export class Location {
        */
       placeService.keywordSearch(input, (res: Place[], status: string) => {
         res = res.map(data => this.responseAdaptor.adapt(data));
-        console.log(status);
-        console.log(input);
 
         if (status === kakao.maps.services.Status.OK) {
           const bounds = new kakao.maps.LatLngBounds();

@@ -12,9 +12,9 @@
 <div class="place-picker-wrapper">
     <div class="header">
         <div class="search">
-            <img class="search-icon" id="backBtn" alt="" src="assets/images/icon_back.png">
+            <img class="search-icon" id="backBtn" alt="" src="src/assets/images/icon_back.png">
             <input class="search-input" id="searchInput" placeholder="장소를 입력해주세요.">
-            <img class="search-btn" id="searchBtn" alt="" src="assets/images/icon_search_grey.png">
+            <img class="search-btn" id="searchBtn" alt="" src="src/assets/images/icon_search_grey.png">
         </div>
     </div>
 
@@ -25,7 +25,7 @@
         <div class="place-info" id="placeInfo">
             <div class="place-info-header">
                 <span class="title" id="infoPlaceName"></span>
-                <img id="placeInfoClose" class="close-icon" alt="" src="assets/images/icon_close_black.png">
+                <img id="placeInfoClose" class="close-icon" alt="" src="src/assets/images/icon_close_black.png">
             </div>
             <div class="place-info-body">
                 <div class="content" id="infoCategoryName"></div>
@@ -38,7 +38,7 @@
         </div>
     </div>
 </div>
-<script src="../dist/KakaoPlacePicker.min.js"></script>
+<script src="dist/KakaoPlacePicker.min.js"></script>
 <script>
     const kakaoPlacePicker = new KakaoPlacePicker.default;
     kakaoPlacePicker.init('7d714a98f3c731f31ee7f6788986595c',

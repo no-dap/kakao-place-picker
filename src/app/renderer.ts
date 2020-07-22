@@ -87,7 +87,6 @@ export class Renderer {
 
   private onClickConfirm(): void {
     this.location.insertRegion((data: Place) => {
-      console.log(data);
       window.top.postMessage({type: 'placeSelected', data}, '*')
     });
   }

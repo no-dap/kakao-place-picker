@@ -34,7 +34,7 @@ export class ScriptCache {
       })
       .catch((err) => {
         this.failed.push(this.pending.pop());
-        console.log(this.failed);
+        console.error('Loading script failed: ', this.failed);
       })
   }
 
