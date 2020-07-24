@@ -11,10 +11,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.less$/i,
-                use: ['style-loader', 'css-loader', 'less-loader', ],
-            },
-            {
                 test: /\.ts$/i,
                 use: ['ts-loader', ]
             },
@@ -30,6 +26,17 @@ module.exports = {
                         name: '[name].[ext]',
                         outputPath: 'img/',
                         publicPath:'img/'
+                    }
+                }]
+            },
+            {
+                test: /\.css$/i,
+                use: [{
+                    loader: 'css-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'style/',
+                        publicPath: 'style/'
                     }
                 }]
             }

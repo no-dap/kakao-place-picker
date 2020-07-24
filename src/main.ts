@@ -4,7 +4,6 @@ import './assets/images/icon_search_grey.png';
 import { EventListener } from './app/event-listener';
 import { kakaoLatLngOptions, LatLng } from './app/interface';
 import { ScriptCache } from './app/script-cache';
-import './global.less';
 
 declare var kakao;
 
