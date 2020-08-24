@@ -81,4 +81,9 @@ npm run-script build
 Works on both PC, mobile (not tested in tablet PC)  
 <img width="399" alt="Screen Shot 2020-07-22 at 5 55 45 PM" src="https://user-images.githubusercontent.com/26595506/88156631-a49fcd00-cc44-11ea-95a4-73cebd7ea683.png">
 
+## How to test
+1. add kakao app key on index.html
+2. npm run-script build
+3. open 'index.html'
+
 Enjoy!
